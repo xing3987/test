@@ -13,6 +13,7 @@ public class PatternAndCaseUpper {
     }
 
     private static void changeString(String x) {
+        //注意这边正则表达式不能使用^$开头结尾符
         String s = x.replaceAll("[0-9!@#$.]", " ");
         //通过分隔一个或者多个空格注意这里要使用多个空格的正则匹配，要不然会分割出空字符串
         String[] words = s.split("\\s+");
@@ -22,7 +23,7 @@ public class PatternAndCaseUpper {
                 String a = words[i].substring(1).toLowerCase();
                 String b = String.valueOf(words[i].charAt(0)).toUpperCase();
                 list.add(b + a);
-            } else { //去除分隔出的空单词
+            } else {
                 list.add(words[i].toUpperCase());
             }
         }
