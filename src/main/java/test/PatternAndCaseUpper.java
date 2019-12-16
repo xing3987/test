@@ -3,7 +3,8 @@ package test;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
+/**
+ * @author chenxing
  * 替换一个字符中的数字和标点字符为空格，并把英文单词第一个大写，其他小写
  */
 public class PatternAndCaseUpper {

@@ -34,6 +34,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author chenxing
+ */
 public class ErrorRecord {
 
     public static void main(String[] args) {
