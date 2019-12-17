@@ -5,6 +5,7 @@ package thread;
  * 一般来说，线程执行完毕就会结束，无须自动关闭。但是对于一些while true的线程如果想关闭呢？Thread类里有stop()方法，但是已经不建议使用了。
  * 因为它是强制停止线程，无论线程处于什么状态，很容易出现线程正在处理一半数据被停止的情况，这样非常容易造成数据不一致问题。
  * 所以慎用stop()(最好不用)，通过下边这种方式来停止那些无限循环的线程
+ * 原文链接：https://blog.csdn.net/liujiahan629629/article/details/84312204
  */
 public class T01StopThread extends Thread {
 
@@ -135,7 +136,7 @@ class WaitNotifyThread {
         new Thread(tg, r2, "t2").start();
 
         System.out.println("ThreadGroup active count:" + tg.activeCount());
-        synchronized (obj){
+        synchronized (obj) {
             System.out.println("-----begin show thread group list:---------");
             tg.list();
             System.out.println("-------show thread group list end.---------");
@@ -162,6 +163,7 @@ class JoinThread {
         System.out.println(num);
         //等待线程执行完成
         t1.join();
+
         System.out.println(num);
     }
 }
