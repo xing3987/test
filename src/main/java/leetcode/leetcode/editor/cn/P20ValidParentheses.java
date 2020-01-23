@@ -40,16 +40,20 @@ package leetcode.leetcode.editor.cn;
 //输出: true 
 // Related Topics 栈 字符串
 
-public class P20ValidParentheses{
-    public static void main(String[] args){
-        Solution solution= new P20ValidParentheses().new Solution();
+/*
+有效的括号
+*/
+public class P20ValidParentheses {
+    public static void main(String[] args) {
+        Solution solution = new P20ValidParentheses().new Solution();
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isValid(String s) {
-        return true;
+    class Solution {
+        public boolean isValid(String s) {
+            return true;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
