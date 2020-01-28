@@ -45,17 +45,6 @@ public class P100SameTree {
         Solution solution = new P100SameTree().new Solution();
     }
 
-
-    //Definition for a binary tree node.
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
     //leetcode submit region begin(Prohibit modification and deletion)
 
     class Solution {
