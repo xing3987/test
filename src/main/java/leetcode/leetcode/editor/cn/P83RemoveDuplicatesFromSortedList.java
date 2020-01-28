@@ -34,6 +34,7 @@ public class P83RemoveDuplicatesFromSortedList {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public ListNode deleteDuplicates(ListNode head) {
+            //指向性引用
             ListNode current = head;
             while (current != null && current.next != null) {
                 if (current.val == current.next.val) {
