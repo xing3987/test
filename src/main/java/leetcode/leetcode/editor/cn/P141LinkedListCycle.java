@@ -39,6 +39,9 @@ package leetcode.leetcode.editor.cn;
 // 你能用 O(1)（即，常量）内存解决此问题吗？ 
 // Related Topics 链表 双指针
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 环形链表
 思路：判断一个链表是否是环形链表，遍历替换数值为null,如果遍历到了null，则是环形链表
@@ -50,6 +53,13 @@ public class P141LinkedListCycle {
     //leetcode submit region begin(Prohibit modification and deletion)
 
     public class Solution {
+        /**
+         * 因为是int数值，所以不能是null，这里就替换为Integer.MIN_VALUE
+         * （漏洞：如果该链表中含Integer.MIN_VALUE值则判断会失败）
+         *
+         * @param head
+         * @return
+         */
         public boolean hasCycle(ListNode head) {
             if (null == head || null == head.next) {
                 return false;
@@ -65,6 +75,7 @@ public class P141LinkedListCycle {
     //leetcode submit region end(Prohibit modification and deletion)
 
     /**
+     * 更好的解法：
      * 每次循环删除后面一个节点，直到后面的节点为空(false)，或者后面的节点和当前节点一致(true)
      *
      * @param head
@@ -77,6 +88,21 @@ public class P141LinkedListCycle {
             }
             if (head.next != null) {
                 head.next = head.next.next;
+            }
+            head = head.next;
+        }
+        return false;
+    }
+
+    //其他解法
+    //我们可以通过检查一个结点此前是否被访问过来判断链表是否为环形链表。常用的方法是使用哈希表。
+    private static boolean hashHasCycle(ListNode head) {
+        Set<ListNode> nodesSeen = new HashSet<>();
+        while (head != null) {
+            if (nodesSeen.contains(head)) {
+                return true;
+            } else {
+                nodesSeen.add(head);
             }
             head = head.next;
         }
