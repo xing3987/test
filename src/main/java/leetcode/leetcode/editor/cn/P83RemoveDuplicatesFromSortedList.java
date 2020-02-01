@@ -21,16 +21,6 @@ public class P83RemoveDuplicatesFromSortedList {
         Solution solution = new P83RemoveDuplicatesFromSortedList().new Solution();
     }
 
-    //Definition for singly-linked list.
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public ListNode deleteDuplicates(ListNode head) {

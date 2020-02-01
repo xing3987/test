@@ -20,16 +20,6 @@ public class P21MergeTwoSortedLists {
         Solution solution = new P21MergeTwoSortedLists().new Solution();
     }
 
-    //Definition for singly-linked list.
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
