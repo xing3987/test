@@ -36,7 +36,18 @@ public class P226InvertBinaryTree {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public TreeNode invertTree(TreeNode root) {
-            return null;
+            if (root == null) {
+                return null;
+            }
+            //反转当前树的子节点
+            TreeNode a = root.left;
+            root.left = root.right;
+            root.right = a;
+            //递归反转左树
+            invertTree(root.left);
+            //递归反转右树
+            invertTree(root.right);
+            return root;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
